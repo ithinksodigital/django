@@ -9,28 +9,27 @@
 <style>
 .content {
 	text-align: center;
+	border-style: solid;
+	background-color: #ffffff;
 }
 </style>
 
 {% block content %}
-
+{% for buddy in buddies %}
+<br />
 <div class="container">
 	<div class="row">
-		<div class="col-xs-12">
-			{% for buddy in buddies %}
-
+		<div class="col-xs-12 content">
 			<h3>{{buddy.name}}  <i> {{buddy.nickname}} </i> {{buddy.last_name}} </h3>
 			<p>{{buddy.knowage}}</p>
 			<p>Pamiętaj, żeby nie rozmawiać o...</p>
 			<p> {{buddy.tabu}} </p>
-			<hr>
+		</div>
+	</div>
+</div>
+<br />
+
 
 {% endfor %}
 
 {% endblock content %}
-
-		</div>
-	</div>
-</div>
-
-
