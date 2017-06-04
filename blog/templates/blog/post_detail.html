@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}  
+            </div>
+        {% endif %}
+        
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+
+       <br />   <a class="btn btn-default" href="../../"><span class="glyphicon glyphicon-arrow-left"></span> wstecz</a><a class="edit btn btn-default" href="{% url 'post_edit' pk=post.pk %}"><span class="glyphicon glyphicon-pencil"></span>  edytuj</a><a class="btn btn-default" href="{% url 'post_remove' pk=post.pk %}"><span class="glyphicon glyphicon-trash"></span>  usuń</a><br />
+    </div>
+{% endblock %}
+
+
