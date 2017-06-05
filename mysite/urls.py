@@ -21,5 +21,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^blog/', include('blog.urls')),
     url(r'^peeps/', include('people.urls')),
+    url(r'^workout/', include('workout.urls')),
     url(r'^', include('books.urls')),
+    url(r'^notes/', include('notes.urls')),
 ]

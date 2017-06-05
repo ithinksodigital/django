@@ -1,0 +1,70 @@
+{% load static %}
+
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+<link rel="stylesheet" href="{% static 'notes/css/style.css' %}">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+
+
+
+
+<body>
+
+<br/>
+<div class="container">
+    <div class="row color-bar">
+    	<div class="col-sm-offset-0 col-sm-6"><h4><strong>radi</strong>pawelec <strong>sticky</strong>notes</h4></div>
+        <div id="yellow" class="dot yellow col-sm-1 hidden-xs"></div>
+        <div id="green" class="dot green col-sm-1 hidden-xs"></div>
+        <div id="blue" class="dot blue col-sm-1 hidden-xs"></div>
+        <div id="violet" class="dot violet col-sm-1 hidden-xs"></div>
+        <div id="pink" class="dot pink col-sm-1 hidden-xs"></div>
+        <div id="grey" class="dot grey col-sm-1 hidden-xs"></div>
+    </div>
+</div>
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-1 col-sm-offset-2"></div>
+        <div class="col-xs-10 col-sm-6"></div>
+        <div class="col-xs-1"></div>
+        <div class="col-sm-offset-2 col-sm-8"></div>
+    </div>
+</div>
+
+	<div class="container">
+
+
+{% block content %}
+{% for note in notes %}
+
+  <div class="row singlenote">
+	    	<div class="add col-xs-1 col-sm-offset-2 visible-xs-sm-md-lg"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></div><div class="title col-xs-10 col-sm-6"">{{note.title}}</div><div class="trash col-xs-1"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></div>
+	        <div class="note col-sm-offset-2 col-sm-8">{{note.text}}</div>
+	    </div>
+	   
+	    
+
+{% endfor %}
+
+{% endblock content %}
+
+	</div>
+
+<script src="{% static 'notes/js/script.js' %}"></script>
+
+</body>
+

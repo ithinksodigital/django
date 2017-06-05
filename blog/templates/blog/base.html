@@ -37,7 +37,9 @@
 
 						<a class="btn btn-default addpost" href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span>  dodaj post</a>
 
+						{% else %}
 
+						<a class="btn btn-default addpost" href="../admin"><span class="glyphicon glyphicon-user"></span>  zaloguj się</a>
 
 
 						{% endif %}
