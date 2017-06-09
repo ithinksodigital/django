@@ -15,13 +15,20 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^music/', include('music.urls')),
     url(r'^blog/', include('blog.urls')),
     url(r'^peeps/', include('people.urls')),
     url(r'^workout/', include('workout.urls')),
     url(r'^', include('books.urls')),
     url(r'^notes/', include('notes.urls')),
+    url(r'^simplegram/', include('simplegram.urls')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

@@ -31,6 +31,8 @@ ALLOWED_HOSTS = ['radipawelec.pythonanywhere.com', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'simplegram.apps.SimplegramConfig',
+    'music.apps.MusicConfig',
     'notes.apps.NotesConfig',
     'workout.apps.WorkoutConfig',
     'books.apps.BooksConfig',
@@ -124,3 +126,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'public', 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
