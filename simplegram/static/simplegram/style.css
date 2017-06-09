@@ -66,3 +66,7 @@ body {
 .navbar-brand {
     font-family: 'Open Sans', sans-serif;
 }
+
+section.main {
+    padding-top: 60px;
+}

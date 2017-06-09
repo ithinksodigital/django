@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HelloPhoto radipawelec</title>
+    {% load staticfiles %}
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'simplegram/style.css'%}" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<!-- menu -->
+<div id="custom-bootstrap-menu" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavBar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{% url 'simplegram:index' %}"><span class="glyphicon glyphicon-camera" aria-hidden="true"></span> | HelloPhoto</a>
+            </div>
+     <!-- items for navbar-->
+            <div class="collapse navbar-collapse" id="topNavBar">
+
+                <ul class="nav navbar-nav">
+                    <li class="active">
+                        <a href="{% url 'simplegram:index' %}">
+                            <span class="glyphicon glyphicon-picture" aria-hidden="true"></span>&nbsp;Photos
+                        </a>
+                    </li>
+                </ul>
+
+
+                <ul class="nav navbar-nav navbar-right">
+                    {% if user.is_authenticated %}
+                    <li class="">
+                            <a href="{% url 'simplegram:photo-add' %}">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>&nbsp;Add photo
+                            </a>
+                    </li>
+                    <li class="">
+                            <a href="../admin/logout/">
+                                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>&nbsp;Logout
+                            </a>
+                    </li>
+                    {% else %}
+                    <li class="">
+                            <a href="../admin/">
+                                <span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Zaloguj
+                            </a>
+                    </li>
+                    {% endif %}
+                </ul>
+
+            </div>
+
+        </div>
+    </div>
+<!-- menuend -->
+<section class="main">
+    {% block body %}
+    {% endblock %}
+
+</section>
+
+</body>
+</html>

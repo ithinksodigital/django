@@ -7,4 +7,9 @@ class IndexView(generic.ListView):
     template_name = 'simplegram/index.html'
 
     def get_queryset(self):
-        return Photo.objects.all()
+        return Photo.objects.all().order_by('created_date').reverse()
+
+
+class PhotoAdd(CreateView):
+    model = Photo
+    fields = ['photo_pic']
