@@ -22,3 +22,8 @@ img {
     margin: 5px;
     border-radius: 25px;
     padding: 10px;}
+
+.cover {
+    width: 250px;
+    height: 250px;
+}
