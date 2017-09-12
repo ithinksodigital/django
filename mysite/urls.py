@@ -25,7 +25,7 @@ urlpatterns = [
     url(r'^blog/', include('blog.urls')),
     url(r'^peeps/', include('people.urls')),
     url(r'^workout/', include('workout.urls')),
-    url(r'^', include('books.urls')),
+    url(r'', include('blog.urls')),
     url(r'^notes/', include('notes.urls')),
     url(r'^simplegram/', include('simplegram.urls')),
 ]
