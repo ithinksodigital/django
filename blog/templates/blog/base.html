@@ -33,18 +33,19 @@
 		 <section class="image">
 		 		<div class="container-fluid">
 					<div class="row">
+						<div class="git_frame col-xs-12">
+						 <a class="git" href="https://github.com/radipawelec?tab=repositories" target="_blank"><i class="fa fa-github fa-4x" aria-hidden="true"></i></a>							
+						</div>
 						{% if user.is_authenticated %}
 
 						<a class="btn btn-default addpost" href="{% url 'post_new' %}"><span class="glyphicon glyphicon-plus"></span>  dodaj post</a>
 
-						{% else %}
-
-						<a class="btn btn-default addpost" href="../admin"><span class="glyphicon glyphicon-user"></span>  zaloguj się</a>
-
-
 						{% endif %}
 						<div class="col-xs-12 caption">
-							<a href="/blog/"><h1>nice to meet you</h1></a>
+							<h1>Rafal Pawelec's
+								<br />
+								webiste
+							</h1>
 							<br />
 						</div>
 					</div>
